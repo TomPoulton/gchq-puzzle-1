@@ -41,7 +41,7 @@ module Puzzle
        @columns.select { |column| !column.solved? }
      end
 
-     def print
+     def to_s
        rows = @cells.map { |row|
          row_symbols = row.map { |cell|
            case cell
@@ -53,7 +53,7 @@ module Puzzle
          }
          row_symbols.join('')
        }
-       "\n#{rows.join("\n")}\n"
+       "\n#{rows.join("\n")}\n\n"
      end
 
      def copy

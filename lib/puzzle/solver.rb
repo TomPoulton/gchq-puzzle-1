@@ -14,7 +14,7 @@ module Puzzle
       while true
         found = false
         log 'Start pass'
-        log @grid.print
+        log @grid.to_s
 
         # Find all quick row and column solutions
         # vector can be a Row or a Column
@@ -53,12 +53,12 @@ module Puzzle
         }
 
         if @grid.unsolved_vectors.count == 0
-          puts @grid.print
+          puts @grid.to_s
           puts 'Solved !!'
           exit 0
         end
         unless found
-          puts @grid.print
+          puts @grid.to_s
           puts 'Error: no more solutions'
           exit 1
         end
