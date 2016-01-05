@@ -29,6 +29,8 @@ module Puzzle
         # if the solution only contains nils then there's no partial solution, return nil
         return nil if partial_solution.compact.empty?
       }
+      # if the partial solution matches what already exists then no new solution has been found
+      return nil if partial_solution.eql? existing_cells
       Solution.new partial_solution
     end
 
